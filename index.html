@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-An image will appear here in 3 seconds (cat.svg by Marco Hernandez):
+An image will appear here in 1 seconds (cat.svg by Marco Hernandez):
 <script>
   navigator.serviceWorker
     .register("/sw.js")
@@ -11,4 +11,8 @@ An image will appear here in 3 seconds (cat.svg by Marco Hernandez):
     img.src = "/dog.svg";
     document.body.appendChild(img);
   }, 1000);
+
+  fetch("http://localhost:3000/api")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
 </script>
